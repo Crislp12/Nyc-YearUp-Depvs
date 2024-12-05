@@ -17,4 +17,4 @@ async function getCategories() {
       option.value = category.categoryId;
       option.innerText = category.name;
       categorySelect.appendChild(option);
-    });
+    })}
