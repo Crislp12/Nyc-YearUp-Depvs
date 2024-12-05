@@ -25,7 +25,7 @@ function populateCategorySelect(categories) {
 async function selectCategory() {
   let byCategoryId = categorySelect.value;
   console.log(byCategoryId);
-  let products = await getProducts();
+  
   let filteredProducts = products.filter(
     (product) => product.categoryId == byCategoryId
   );
