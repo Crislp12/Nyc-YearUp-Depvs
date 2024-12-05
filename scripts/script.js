@@ -19,7 +19,7 @@ async function populateProductSelect() {
       if (event.target.value === "") {
         // "View All" was selected
         console.log("Showing all products");
-        // now showing showing all products
+        //  showing showing all products
       } else {
         // A specific product was selected
         const selectedProductId = event.target.value;
@@ -32,7 +32,7 @@ async function populateProductSelect() {
   }
 }
 
-// this right here calls the function when the page loads
+// calling the function when the page loads
 document.addEventListener("DOMContentLoaded", populateProductSelect);
 // Cards start here...
 function createProductCard(product) {
