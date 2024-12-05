@@ -54,3 +54,9 @@ function createProductCard(product) {
   const cardText = document.createElement("p");
   cardText.className = "card-text text-body-secondary";
   cardText.textContent = product.supplier;
+  cardBody.appendChild(cardTitle);
+  cardBody.appendChild(cardSubtitle);
+  cardBody.appendChild(cardText);
+  cardContainer.appendChild(cardBody);
+  products.appendChild(cardContainer)
+}
