@@ -34,3 +34,23 @@ async function populateProductSelect() {
 
 // this right here calls the function when the page loads
 document.addEventListener("DOMContentLoaded", populateProductSelect);
+
+function createProductCard(product) {
+  const cardContainer = document.createElement("div");
+  cardContainer.className = "card";
+  cardContainer.style.width = "18rem";
+
+  const cardBody = document.createElement("div");
+  cardBody.className = "card-body";
+
+  const cardTitle = document.createElement("h6");
+  cardTitle.className = "card-title";
+  cardTitle.textContent = product.productName;
+
+  const cardSubtitle = document.createElement("h6");
+  cardSubtitle.className = "card-subtitle mb-2 text-body-secondary";
+  cardSubtitle.textContent = "$" + product.unitPrice.toFixed(2);
+
+  const cardText = document.createElement("p");
+  cardText.className = "card-text text-body-secondary";
+  cardText.textContent = product.supplier;
