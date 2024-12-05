@@ -22,3 +22,19 @@ async function getCategories() {
       categorySelect.appendChild(option);
     });
   }
+  async function selectCategory() {
+    let byCategoryId = categorySelect.value;
+    console.log(byCategoryId);
+    let products = await getProducts();
+    let filteredProducts = products.filter((product) => product.categoryId == byCategoryId);
+    populateProductCards(filteredProducts);
+  }
+  
+  async function startupPage() {
+    let categories = await getCategories();
+    populateCategorySelect(categories);
+    let products = await getProducts();
+    populateProductCards(products);
+
+  }
+  startupPage();
