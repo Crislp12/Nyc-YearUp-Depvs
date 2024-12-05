@@ -58,5 +58,5 @@ function createProductCard(product) {
   cardBody.appendChild(cardSubtitle);
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardBody);
-  products.appendChild(cardContainer);
+  productsList.appendChild(cardContainer);
 }

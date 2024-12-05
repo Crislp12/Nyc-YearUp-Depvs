@@ -18,3 +18,4 @@ async function getCategories() {
       option.innerText = category.name;
       categorySelect.appendChild(option);
     })}
+    
