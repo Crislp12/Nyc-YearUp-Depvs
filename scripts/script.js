@@ -1,6 +1,6 @@
 async function populateProductSelect() {
   try {
-    // Fetch 
+    // Fetch
     const response = await fetch("http://localhost:8081/api/products");
     const products = await response.json();
 
@@ -34,7 +34,7 @@ async function populateProductSelect() {
 
 // this right here calls the function when the page loads
 document.addEventListener("DOMContentLoaded", populateProductSelect);
-
+// Cards start here...
 function createProductCard(product) {
   const cardContainer = document.createElement("div");
   cardContainer.className = "card";
@@ -58,5 +58,5 @@ function createProductCard(product) {
   cardBody.appendChild(cardSubtitle);
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardBody);
-  products.appendChild(cardContainer)
+  products.appendChild(cardContainer);
 }
