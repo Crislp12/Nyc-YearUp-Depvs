@@ -14,10 +14,14 @@ async function populateProductSelect() {
       if (event.target.value === "") {
         // "View All" was selected
         console.log("Showing all products");
+<<<<<<< HEAD
+        //  showing showing all products
+=======
         products.forEach(product => {
           const card = createProductCard(product);
           productCardsContainer.appendChild(card);
         });
+>>>>>>> 254913fdde79047cab4eacdd013c6d1c9b09f8f2
       } else {
         // A specific product was selected
         const selectedProductId = event.target.value;
@@ -33,7 +37,7 @@ async function populateProductSelect() {
   }
 }
 
-// this right here calls the function when the page loads
+// calling the function when the page loads
 document.addEventListener("DOMContentLoaded", populateProductSelect);
 
 // Cards start here...
@@ -60,6 +64,6 @@ function createProductCard(product) {
   cardBody.appendChild(cardSubtitle);
   cardBody.appendChild(cardText);
   cardContainer.appendChild(cardBody);
-  products.appendChild(cardContainer);
+  productsList.appendChild(cardContainer);
 }
 
