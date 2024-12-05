@@ -4,36 +4,42 @@ async function populateProductSelect() {
     const response = await fetch("http://localhost:8081/api/products");
     const products = await response.json();
 
-    // select elements
-    const selectElement = document.getElementById("shopByTypeSelect");
+    // Get the select element for categories
+    const selectElement = document.getElementById('categorySelect');
+    const productCardsContainer = document.getElementById('productCards');
 
-    // Addding products
-    for (let i = 0; i < products.length; i++) {
-      const option = document.createElement("option");
-      option.value = products[i].productId;
-      option.textContent = `${products[i].productName} (${products[i].categoryName})`;
-      selectElement.appendChild(option);
-    }
-
-    selectElement.addEventListener("change", function (event) {
+    // Add change event listener
+    selectElement.addEventListener('change', function(event) {
+      productCardsContainer.innerHTML = ''; // Clear existing cards
       if (event.target.value === "") {
         // "View All" was selected
         console.log("Showing all products");
+<<<<<<< HEAD
         //  showing showing all products
+=======
+        products.forEach(product => {
+          const card = createProductCard(product);
+          productCardsContainer.appendChild(card);
+        });
+>>>>>>> 254913fdde79047cab4eacdd013c6d1c9b09f8f2
       } else {
         // A specific product was selected
         const selectedProductId = event.target.value;
         console.log("Selected product ID:", selectedProductId);
-        // showing specific product displaying
+        const selectedProduct = products.find(p => p.productId == selectedProductId);
+        const card = createProductCard(selectedProduct);
+        productCardsContainer.appendChild(card);
       }
     });
+
   } catch (error) {
-    console.error("Error fetching products:", error);
+    console.error('Error fetching products:', error);
   }
 }
 
 // calling the function when the page loads
 document.addEventListener("DOMContentLoaded", populateProductSelect);
+
 // Cards start here...
 function createProductCard(product) {
   const cardContainer = document.createElement("div");
@@ -60,3 +66,4 @@ function createProductCard(product) {
   cardContainer.appendChild(cardBody);
   productsList.appendChild(cardContainer);
 }
+
